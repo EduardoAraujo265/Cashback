@@ -1,10 +1,13 @@
 ##imports
+import os
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi import Request
 from fastapi.responses import HTMLResponse, FileResponse
 import mysql.connector
 import datetime 
 from pydantic import BaseModel
+
 ## classe pra receber o corpo da requisição através do "fetch()" do javascript 
 class CashbackRequest(BaseModel):
     valor: float
@@ -12,12 +15,16 @@ class CashbackRequest(BaseModel):
 
 ## try para inicialização do servidor e conexão com o banco de dados MySQL
 try :
-    ## conexão com o banco de dados MySQL 
+    ## conexão com o banco de dados MySQL
+    # carregando dotenv 
+    load_dotenv()
+
     myconn =mysql.connector.connect(
-            host="sql10.freesqldatabase.com",
-            user="sql10830713",
-            password="BGI6eHIvtb",
-            database="sql10830713")
+            host= os.getenv('host'),
+            user=os.getenv('user'),
+            password=os.getenv('pass'),
+            database=os.getenv('db'),
+            port=os.getenv('port'))
     
     ## query de criação da tabela "consultas cashback" caso ela não exista
     query = """CREATE TABLE IF NOT EXISTS consultas (
