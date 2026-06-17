@@ -94,4 +94,6 @@ async def cashback(valor: CashbackRequest,request: Request):
         return {"ERROR": str(err), "message": "Erro ao inserir consulta de cashback"}
         print("ERROR: {}".format(err)) 
 
-    
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000) 
