@@ -5,7 +5,7 @@ Aplicação web **simular e consultar cashback de compras**, construída com Fas
 > Projeto desenvolvido por **Eduardo Araújo Nóbrega** como parte do processo seletivo da **Nology**.
 
 **Demo online:** https://cashback-henna-three.vercel.app 
-O servidor, por ser hospedado gratuitamente, pode limitar o número de conexões e não funcionar sob estresse
+>O servidor, por ser hospedado gratuitamente, pode limitar o número de conexões e não funcionar sob estresse
 
 
 
@@ -76,9 +76,11 @@ O servidor, por ser hospedado gratuitamente, pode limitar o número de conexões
 
 Método
 
- `GET`  `/` Retorna a página principal (`index.html`) 
- `GET`  `/consultas`  Retorna o histórico de consultas feitas pelo IP da requisição 
- `POST`  `/cashback` Calcula o cashback, salva a consulta e retorna confirmação 
+ >`GET`  `/` Retorna a página principal (`index.html`) 
+
+> `GET`  `/consultas`  Retorna o histórico de consultas feitas pelo IP da requisição
+
+> `POST`  `/cashback` Calcula o cashback, salva a consulta e retorna confirmação 
 
 
 ## Autor
