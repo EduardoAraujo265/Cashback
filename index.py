@@ -12,13 +12,13 @@ class CashbackRequest(BaseModel):
 
 ## try para inicialização do servidor e conexão com o banco de dados MySQL
 try :
-    ## conexão com o banco de dados MySQL
-    myconn = mysql.connector.connect(
-    host="localhost",
-    user="admin",
-    password="123",
-    database="pysql")
-
+    ## conexão com o banco de dados MySQL 
+    myconn =mysql.connector.connect(
+            host="sql10.freesqldatabase.com",
+            user="sql10830713",
+            password="BGI6eHIvtb",
+            database="sql10830713")
+    
     ## query de criação da tabela "consultas cashback" caso ela não exista
     query = """CREATE TABLE IF NOT EXISTS consultas (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -31,7 +31,6 @@ try :
     cursor = myconn.cursor()
     cursor.execute(query)
     print ("LOG:Tabela existe ou foi criada com sucesso!")
-
 except mysql.connector.Error as err:
     print("ERROR: {}".format(err)) 
 
