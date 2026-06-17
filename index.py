@@ -75,7 +75,7 @@ async def cashback(valor: CashbackRequest,request: Request):
     ## calcula cashback
     cashback = valor.valor * 0.05 
     if valor.valor > 500:
-            cashback += cashback * 2
+            cashback = cashback * 2
     if valor.vip == True:
         cashback += cashback * 0.10
     
